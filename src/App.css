@@ -1,0 +1,85 @@
+.app {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #0D1117;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  color: #FFFFFF;
+  font-family: system-ui, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #FF69B4;
+  margin-bottom: 30px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  background-color: #1F2A3A;
+  border: 1px solid #2D3A4A;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #FF69B4;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #FF69B4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #FF3B9F;
+}
+
+.switch-btn {
+  background-color: transparent;
+  color: #00CED1;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.switch-btn:hover {
+  background-color: transparent;
+  color: #40E0D0;
+  text-decoration: underline;
+}
+
+.logout-btn {
+  background-color: #FF4500;
+}
+
+.logout-btn:hover {
+  background-color: #CC3700;
+}
+
+.message {
+  text-align: center;
+  margin-top: 20px;
+  color: #00CED1;
+  font-size: 14px;
+}
+
+.profile {
+  background-color: #1F2A3A;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
