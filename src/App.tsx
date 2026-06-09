@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { register, login, getMe } from './api/auth'
+import WeekPlanner from './components/WeekPlanner'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         .then(userData => {
           setUser(userData)
           setMessage(`Добро пожаловать, ${userData.name || userData.email}`)
+          console.log('message state:', message) //проверка
         })
         .catch(() => {
           localStorage.removeItem('token')
@@ -29,7 +31,7 @@ function App() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setMessage('')
-    
+
     try {
       if (isLogin) {
         const data = await login(email, password)
@@ -59,21 +61,26 @@ function App() {
 
   if (user) {
     return (
-      <div className="app">
-        <h1>Планер</h1>
-        <div className="profile">
-          <p><strong>Имя:</strong> {user.name || '—'}</p>
-          <p><strong>Email:</strong> {user.email}</p>
-          <button onClick={handleLogout} className="logout-btn">Выйти</button>
+      <div className="app-container">
+        <div className="header">
+          <h1>Планер</h1>
+          <div className="user-info">
+            <div className="user-details">
+              {user.name && <span className="user-name">{user.name}</span>}
+              <span className="user-email">{user.email}</span>
+            </div>
+            <button onClick={handleLogout} className="logout-btn">Выйти</button>
+          </div>
         </div>
+        <WeekPlanner />
       </div>
     )
   }
 
   return (
-    <div className="app">
+    <div className="auth-container">
       <h1>{isLogin ? 'Вход' : 'Регистрация'}</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="auth-form" onSubmit={handleSubmit}>
         {!isLogin && (
           <input
             type="text"
