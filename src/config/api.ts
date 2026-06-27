@@ -4,8 +4,5 @@
 // API_URL — для защищённых эндпоинтов (/api/*)
 // AUTH_URL — для авторизации (/auth/*)
 
-const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
-const authBaseURL = import.meta.env.VITE_AUTH_URL || 'http://localhost:4000';
-
-export const API_URL = baseURL;
-export const AUTH_URL = authBaseURL;
+export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+export const AUTH_URL = import.meta.env.VITE_AUTH_URL || 'http://localhost:4000';
